@@ -18,10 +18,46 @@ const LogoTXT = styled.h1 `
   font-family: 'Pacifico', cursive;
 `
 class App extends Component {
-  componentDidMount(){
-    const socket = io('http://localhost', {
-      path: '/myownpath'
-    });
+  constructor(props) {
+    super(props);
+    this.state = {
+      current_number: 0,
+      max_number: 0,
+      plus_number: 0,
+      player_count:0,
+      current_player:0
+    };
+
+  }
+  componentDidMount() {
+    const socket = io('http://localhost:8001');
+    
+    socket.on('current_number', (data) => {
+      console.log(`current_number: ${data.current_number}`)
+      this.setState({current_number: data.current_number})
+    })
+    
+    socket.on('max_number', (data) => {
+      console.log(`max_number: ${data.max_number}`)
+      this.setState({max_number: data.max_number})
+    })
+
+    socket.on('plus_number', (data) => {
+      console.log(`plus_number: ${data.plus_number}`)
+      this.setState({plus_number: data.plus_number})
+    })
+
+    socket.on('player_count', (data) => {
+      console.log(`player_count: ${data.player_count}`)
+      this.setState({player_count: data.player_count})
+    })
+
+    socket.on('current_player', (data) => {
+      console.log(`current_player: ${data.current_player}`)
+      this.setState({current_player: data.current_player})
+    })
+
+    
 
   }
   render() {
