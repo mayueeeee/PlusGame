@@ -12,7 +12,7 @@ export const PlayerTitle = styled.h2 `
 export const PlayerWarpper = styled.div ``
 
 const PlayerPic = styled.img `  
-  width:15%;
+  width:20%;
   padding-right: 10px;  
   
   
@@ -20,6 +20,7 @@ const PlayerPic = styled.img `
 const InactivePlayerPic = PlayerPic.extend`
   /* filter: ${props => props.active ? 'none' : 'grayscale(100%)'}; */
   filter: grayscale(100%);
+  width:10%;
 `
 // class PlayerTurn extends Component {   render() {     return (
 // <PlayerWarpper>         <Row>           <Col>
@@ -43,7 +44,7 @@ class PlayerTurn extends Component {
             {/* <PlayerNumber>{this.props.number}</PlayerNumber> */}
             {Array(this.props.number)
               .fill(1)
-              .map((el, i) =>{i===this.props.current_player ? <PlayerPic key={i} src="assets/player_kita.png"/> : <InactivePlayerPic key={i} src="assets/player_kita.png"/>}
+              .map((el, i) => <PlayerPlaceholder key={i} id={i} current={this.props.current_player}/>
               )}
             
           </Col>
@@ -51,6 +52,19 @@ class PlayerTurn extends Component {
 
       </PlayerWarpper>
     );
+  }
+}
+
+
+class PlayerPlaceholder extends Component {
+  render() {   
+    if(this.props.id==this.props.current-1) {
+      return (<PlayerPic src="assets/player_kita.png"/>)
+    }
+    else{
+      return (<InactivePlayerPic src="assets/player_kita.png"/>)
+    }  
+    
   }
 }
 
