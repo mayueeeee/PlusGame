@@ -13,9 +13,14 @@ export const PlayerWarpper = styled.div ``
 
 const PlayerPic = styled.img `  
   width:15%;
-  padding-right: 10px;
+  padding-right: 10px;  
+  
+  
 `
-
+const InactivePlayerPic = PlayerPic.extend`
+  /* filter: ${props => props.active ? 'none' : 'grayscale(100%)'}; */
+  filter: grayscale(100%);
+`
 // class PlayerTurn extends Component {   render() {     return (
 // <PlayerWarpper>         <Row>           <Col>
 // <PlayerTitle>{this.props.title}</PlayerTitle>           </Col>         </Row>
@@ -24,7 +29,8 @@ const PlayerPic = styled.img `
 // </Row>       </PlayerWarpper>     );   } }
 
 class PlayerTurn extends Component {
-  render() {
+  render() {    
+
     return (
       <PlayerWarpper>
         <Row>
@@ -37,7 +43,8 @@ class PlayerTurn extends Component {
             {/* <PlayerNumber>{this.props.number}</PlayerNumber> */}
             {Array(this.props.number)
               .fill(1)
-              .map((el, i) =><PlayerPic key={i} src="assets/player_kita.png"/>)}
+              .map((el, i) =>{i===this.props.current_player ? <PlayerPic key={i} src="assets/player_kita.png"/> : <InactivePlayerPic key={i} src="assets/player_kita.png"/>}
+              )}
             
           </Col>
         </Row>

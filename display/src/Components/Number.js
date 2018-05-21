@@ -10,6 +10,7 @@ const SectionWarpper = styled.h2`
   margin-top: 70px;
   font-family: 'Inconsolata', monospace;
 `
+
 export class SmallNumber extends Component {
   render() {
     return (
