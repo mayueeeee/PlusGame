@@ -1,16 +1,27 @@
 import React, {Component} from 'react';
 import {Row, Col} from 'reactstrap'
 import styled from 'styled-components'
-const PlayerNumber = styled.h1 `
+export const PlayerNumber = styled.h1 `
   color: #fff;
   font-family: 'Roboto Mono', monospace;
 `
-const PlayerTitle = styled.h2 `
+export const PlayerTitle = styled.h2 `
   color: #fff;
   font-family: 'Roboto Mono', monospace;
 `
-const PlayerWarpper = styled.div``
+export const PlayerWarpper = styled.div ``
 
+const PlayerPic = styled.img `  
+  width:15%;
+  padding-right: 10px;
+`
+
+// class PlayerTurn extends Component {   render() {     return (
+// <PlayerWarpper>         <Row>           <Col>
+// <PlayerTitle>{this.props.title}</PlayerTitle>           </Col>         </Row>
+//         <Row>           <Col>
+// <PlayerNumber>{this.props.number}</PlayerNumber>           </Col>
+// </Row>       </PlayerWarpper>     );   } }
 
 class PlayerTurn extends Component {
   render() {
@@ -23,7 +34,11 @@ class PlayerTurn extends Component {
         </Row>
         <Row>
           <Col>
-            <PlayerNumber>{this.props.number}</PlayerNumber>
+            {/* <PlayerNumber>{this.props.number}</PlayerNumber> */}
+            {Array(this.props.number)
+              .fill(1)
+              .map((el, i) =><PlayerPic key={i} src="assets/player_kita.png"/>)}
+            
           </Col>
         </Row>
 
