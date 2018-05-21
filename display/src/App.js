@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Col, Row} from 'reactstrap'
 import styled from 'styled-components'
+import io from 'socket.io-client'
 import PlayerNumber from './Components/Player'
 import BigNumber, {SmallNumber} from './Components/Number'
 const FullViewContainer = styled(Container)`
@@ -14,6 +15,12 @@ const LogoTXT = styled.h1 `
   font-family: 'Pacifico', cursive;
 `
 class App extends Component {
+  componentDidMount(){
+    const socket = io('http://localhost', {
+      path: '/myownpath'
+    });
+
+  }
   render() {
     return (
       <FullViewContainer fluid={true} className="text-center">
