@@ -14,13 +14,8 @@ io.on('connection', socket => {
 app.use(bodyParser.urlencoded(true))
 app.use(express.static(__dirname + '/build'));
 
-// app.get('/', (req, res) => {
-//   res.sendfile(__dirname + '/build/index.html');
-// });
-
-
-
-// app.post(`${api_root}/init`, (req, res) => {     SocketIO.emit('init',
+// app.get('/', (req, res) => {   res.sendfile(__dirname + '/build/index.html');
+// }); app.post(`${api_root}/init`, (req, res) => {     SocketIO.emit('init',
 // {current_number: parseInt(req.body.number)})     res.json({status: true,
 // message: "Emit Success"}) })
 
@@ -56,6 +51,21 @@ app.post(`${api_root}/player/current`, (req, res) => {
   SocketIO.emit('current_player', {
     current_player: parseInt(req.body.current)
   })
+  res.json({status: true, message: "Emit Success"})
+})
+
+app.get(`${api_root}/status/start`, (req, res) => {
+  SocketIO.emit('start', {})
+  res.json({status: true, message: "Emit Success"})
+})
+
+app.get(`${api_root}/status/lose`, (req, res) => {
+  SocketIO.emit('lose', {})
+  res.json({status: true, message: "Emit Success"})
+})
+
+app.get(`${api_root}/status/restart`, (req, res) => {
+  SocketIO.emit('restart', {})
   res.json({status: true, message: "Emit Success"})
 })
 
