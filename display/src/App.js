@@ -133,11 +133,11 @@ class App extends Component {
               <ScoreTitle>Total</ScoreTitle>            
                 <BigNumber>{this.state.current_number}</BigNumber>
               </Col>
-              <Col md={3} className="d-flex">
+              <Col md={1} className="d-flex">
                 <div className="justify-content-center align-self-center">
-                  {/* <LightIcon
-                    className="fas fa-plus fa-10x justify-content-center align-self-center fa-spin"/> */}
-                    <PlusPic className="fa-spin" src="assets/tik.png"/>
+                  <LightIcon
+                    className="fas fa-plus fa-10x justify-content-center align-self-center"/>
+                    {/* <PlusPic className="fa-spin" src="assets/tik.png"/> */}
                 </div>
 
               </Col>
