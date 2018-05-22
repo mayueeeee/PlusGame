@@ -30,3 +30,7 @@ export const ScoreTitle = styled.h2`
 export const LightIcon = styled.i`
     color: #fff;
 `
+
+export const PlusPic = styled.img`
+    height:20vw;
+`

@@ -5,7 +5,7 @@ import io from 'socket.io-client'
 import PlayerNumber from './Components/Player'
 import BigNumber, {SmallNumber, MaxNumber} from './Components/Number'
 import {LosePage, InitPage} from './Components/Pages'
-import {SectionWarpper,ScoreTitle,LightIcon} from './Components/Utils'
+import {SectionWarpper,ScoreTitle,LightIcon,PlusPic } from './Components/Utils'
 
 const FullViewContainer = styled(Container)`
   height: 100vh;  
@@ -133,10 +133,11 @@ class App extends Component {
               <ScoreTitle>Total</ScoreTitle>            
                 <BigNumber>{this.state.current_number}</BigNumber>
               </Col>
-              <Col md={1} className="d-flex">
+              <Col md={3} className="d-flex">
                 <div className="justify-content-center align-self-center">
-                  <LightIcon
-                    className="fas fa-plus fa-10x justify-content-center align-self-center fa-spin"/>
+                  {/* <LightIcon
+                    className="fas fa-plus fa-10x justify-content-center align-self-center fa-spin"/> */}
+                    <PlusPic className="fa-spin" src="assets/tik.png"/>
                 </div>
 
               </Col>
