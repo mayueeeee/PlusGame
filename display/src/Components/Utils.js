@@ -17,5 +17,16 @@ export const LogoTXT = styled.h1 `
 
 export const SectionWarpper = styled.div`
   margin: 15vh 0 0 0;
-  padding: 0 25vw 0 25vw;
+  ${props => props.fluid ? '' : 'padding: 0 25vw 0 25vw'}
+  /* padding: 0 25vw 0 25vw; */
+`
+
+export const ScoreTitle = styled.h2`
+    color: #fff;
+    font-family: 'Pacifico', cursive;
+
+`
+
+export const LightIcon = styled.i`
+    color: #fff;
 `

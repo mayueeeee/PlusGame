@@ -5,6 +5,7 @@ import io from 'socket.io-client'
 import PlayerNumber from './Components/Player'
 import BigNumber, {SmallNumber, MaxNumber} from './Components/Number'
 import {LosePage, InitPage} from './Components/Pages'
+import {SectionWarpper,ScoreTitle,LightIcon} from './Components/Utils'
 
 const FullViewContainer = styled(Container)`
   height: 100vh;  
@@ -106,7 +107,6 @@ class App extends Component {
           {/* <LosePage player={this.state.current_player} /> */}
 
           <FullViewContainer fluid={true}>
-
             <Row>
               <Col xs={3}>
                 {/* <LogoTXT>eeeee</LogoTXT> */}
@@ -124,22 +124,28 @@ class App extends Component {
             <SmallNumber>200</SmallNumber>
           </Col>
         </Row> */}
+        <Row>
+          
+        </Row>
+        <SectionWarpper fluid>
             <Row>
-              <Col>
-                <h2>Total</h2>
+              <Col>    
+              <ScoreTitle>Total</ScoreTitle>            
                 <BigNumber>{this.state.current_number}</BigNumber>
               </Col>
-              <Col md={1} className="d-flex h-100">
+              <Col md={1} className="d-flex">
                 <div className="justify-content-center align-self-center">
-                  <i
-                    className="fas fa-plus fa-10x justify-content-center align-self-center fa-spin"></i>
+                  <LightIcon
+                    className="fas fa-plus fa-10x justify-content-center align-self-center fa-spin"/>
                 </div>
 
               </Col>
               <Col>
+              <ScoreTitle>{'Plus'}</ScoreTitle>     
                 <BigNumber>{this.state.plus_number}</BigNumber>
               </Col>
             </Row>
+            </SectionWarpper>
 
           </FullViewContainer>
 
