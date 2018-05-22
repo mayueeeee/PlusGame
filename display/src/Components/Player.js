@@ -57,12 +57,15 @@ class PlayerTurn extends Component {
 
 
 class PlayerPlaceholder extends Component {
+  
   render() {   
+    const picName = ['kita','field','fluk','aj']
+
     if(this.props.id==this.props.current-1) {
-      return (<PlayerPic src="assets/player_kita.png"/>)
+      return (<PlayerPic src={`assets/player_${picName[this.props.id]}.png`}/>)
     }
     else{
-      return (<InactivePlayerPic src="assets/player_kita.png"/>)
+      return (<InactivePlayerPic src={`assets/player_${picName[this.props.id]}.png`}/>)
     }  
     
   }
