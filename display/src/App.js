@@ -26,7 +26,7 @@ class App extends Component {
       current_number: 0,
       max_number: 0,
       plus_number: 0,
-      player_count: 0,
+      player_count: 2,
       current_player: 1,
       isLose: false,
       isStart: false
@@ -78,7 +78,7 @@ class App extends Component {
         current_number: 0,
         max_number: 0,
         plus_number: 0,
-        player_count: 0,
+        player_count: 2,
         current_player: 1,
         isLose: false,
         isStart: false
