@@ -99,6 +99,12 @@ export class InitPage extends Component {
             <Col><StyleText>Press Start key to start game</StyleText></Col>
           </Row>
         </SectionWarpper>
+        <ReactPlayer
+              url='https://www.youtube.com/watch?v=B5-X_3_Kpww'
+              width='0%'
+              height='0%'
+              loop
+              playing/>
       </FullHeightContainer>
     );
   }

@@ -5,7 +5,8 @@ import io from 'socket.io-client'
 import PlayerNumber from './Components/Player'
 import BigNumber, {SmallNumber, MaxNumber} from './Components/Number'
 import {LosePage, InitPage} from './Components/Pages'
-import {SectionWarpper,ScoreTitle,LightIcon,PlusPic } from './Components/Utils'
+import {SectionWarpper, ScoreTitle, LightIcon, PlusPic} from './Components/Utils'
+import ReactPlayer from 'react-player'
 
 const FullViewContainer = styled(Container)`
   height: 100vh;  
@@ -110,7 +111,11 @@ class App extends Component {
             <Row>
               <Col xs={3}>
                 {/* <LogoTXT>eeeee</LogoTXT> */}
-                <PlayerNumber number={this.state.player_count} current_player ={this.state.current_player} title="Player"/>
+                <PlayerNumber
+                  number={this.state.player_count}
+                  current_player
+                  ={this.state.current_player}
+                  title="Player"/>
               </Col>
               <Col xs={6}>
                 <LogoTXT>Count Game Yay!</LogoTXT>
@@ -124,29 +129,32 @@ class App extends Component {
             <SmallNumber>200</SmallNumber>
           </Col>
         </Row> */}
-        <Row>
-          
-        </Row>
-        <SectionWarpper fluid>
-            <Row>
-              <Col>    
-              <ScoreTitle>Total</ScoreTitle>            
-                <BigNumber>{this.state.current_number}</BigNumber>
-              </Col>
-              <Col md={1} className="d-flex">
-                <div className="justify-content-center align-self-center">
-                  <LightIcon
-                    className="fas fa-plus fa-10x justify-content-center align-self-center"/>
-                    {/* <PlusPic className="fa-spin" src="assets/tik.png"/> */}
-                </div>
+            <Row></Row>
+            <SectionWarpper fluid>
+              <Row>
+                <Col>
+                  <ScoreTitle>Total</ScoreTitle>
+                  <BigNumber>{this.state.current_number}</BigNumber>
+                </Col>
+                <Col md={1} className="d-flex">
+                  <div className="justify-content-center align-self-center">
+                    <LightIcon
+                      className="fas fa-plus fa-10x justify-content-center align-self-center"/> {/* <PlusPic className="fa-spin" src="assets/tik.png"/> */}
+                  </div>
 
-              </Col>
-              <Col>
-              <ScoreTitle>{'Plus'}</ScoreTitle>     
-                <BigNumber>{this.state.plus_number}</BigNumber>
-              </Col>
-            </Row>
+                </Col>
+                <Col>
+                  <ScoreTitle>{'Plus'}</ScoreTitle>
+                  <BigNumber>{this.state.plus_number}</BigNumber>
+                </Col>
+              </Row>
             </SectionWarpper>
+            <ReactPlayer
+              url='https://www.youtube.com/watch?v=Sagg08DrO5U'
+              width='0%'
+              height='0%'
+              loop
+              playing/>
 
           </FullViewContainer>
 
